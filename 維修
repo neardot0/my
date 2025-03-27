@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>部門專用網站</title>
+<style>
+body {
+font-family: "微軟正黑體", sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+header {
+background-color: #3a7bd5;
+color: white;
+padding: 15px;
+text-align: center;
+font-size: 24px;
+}
+
+nav {
+display: flex;
+justify-content: center;
+background-color: #eee;
+}
+
+nav button {
+padding: 10px 20px;
+margin: 5px;
+border: none;
+background-color: #ddd;
+cursor: pointer;
+font-size: 16px;
+}
+
+nav button.active {
+background-color: #3a7bd5;
+color: white;
+}
+
+section {
+display: none;
+padding: 20px;
+background-color: white;
+}
+
+section.active {
+display: block;
+}
+
+footer {
+text-align: center;
+padding: 10px;
+color: #777;
+font-size: 14px;
+}
+</style>
+</head>
+<body>
+<header>部門專用網站</header>
+
+<nav>
+<button onclick="showSection('repair')" class="active">維修</button>
+<button onclick="showSection('shipping')">收送料</button>
+<button onclick="showSection('parts')">零件管理</button>
+<button onclick="showSection('links')">常用連結</button>
+</nav>
+
+<section id="repair" class="active">
+<h2>維修</h2>
+<p>這裡可以放維修表單、保養排程、常見問題處理流程等。</p>
+</section>
+
+<section id="shipping">
+<h2>收送料</h2>
+<p>這裡可以放出貨/收料記錄，下載模板或雲端表單連結。</p>
+</section>
+
+<section id="parts">
+<h2>零件管理</h2>
+<p>這裡可以放零件料號、圖片、說明、分類表。</p>
+</section>
+
+<section id="links">
+<h2>常用連結</h2>
+<ul>
+<li><button onclick="window.location.href='https://sappg4wd.micron.com/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html?sap-client=100#Asset-Management&/QueryWorkList'">放行單</button></li> <!-- 新增的按鍵 -->
+<li>*An external link was removed to protect your privacy.* 總表</a></li>
+<li>*An external link was removed to protect your privacy.* 送貨清單</a></li>
+<li>*An external link was removed to protect your privacy.* 放行單</a></li>
+<li>*An external link was removed to protect your privacy.* MWM</a></li>
+<li>*An external link was removed to protect your privacy.* MATREQ</a></li>
+<li>*An external link was removed to protect your privacy.* 維修紀錄表OK</a></li>
+<li>*An external link was removed to protect your privacy.* 新增的連結</a></li> <!-- 新增的連結 -->
+</ul>
+</section>
+
+<footer>&copy; 2025 部門資訊站</footer>
+
+<script>
+function showSection(id) {
+const sections = document.querySelectorAll("section");
+const buttons = document.querySelectorAll("nav button");
+
+sections.forEach(section => {
+section.classList.remove("active");
+});
+
+buttons.forEach(btn => {
+btn.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+event.target.classList.add("active");
+}
+</script>
+</body>
+</html>
